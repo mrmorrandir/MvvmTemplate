@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:messagesViews="clr-namespace:MvvmTemplate.GUI.Views.Messages"
+                    xmlns:messagesViewModels="clr-namespace:MvvmTemplate.GUI.ViewModels.Messages">
+    <DataTemplate DataType="{x:Type messagesViewModels:MessagesVM}">
+        <messagesViews:Messages/>
+    </DataTemplate>
+</ResourceDictionary>

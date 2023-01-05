@@ -1,0 +1,88 @@
+﻿<Window x:Class="MvvmTemplate.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mlib="http://mlib.com/mvvm"
+        xmlns:wse="http://wse.com/users"
+        xmlns:viewModels="clr-namespace:MvvmTemplate.GUI.ViewModels"
+        xmlns:messagesViews="clr-namespace:MvvmTemplate.GUI.Views.Messages"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewModels:MainWindowVM, IsDesignTimeCreatable=false}"
+        Title="MvvmTemplate" Height="1080" Width="1920">
+    
+    <DockPanel>
+            <mlib:Widget Header="Menü" DockPanel.Dock="Left" Margin="5">
+                <DockPanel LastChildFill="False">
+                    <!--#region Top Icons (Online Only) -->
+                    <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                        <!--Prüfung druchführen-->
+                        <mlib:WidgetImageButton Command="{Binding StartCommand}"
+                                      Style="{DynamicResource TopMenuButtons}"
+                                      Image="/Images/Play (32x32).png" 
+                                      Content="Start" 
+                                      wse:Session.Visibility="Collapsed"
+                                      wse:Session.AuthMode="Authorized"
+                                      wse:Session.Software="MvvmTemplate"
+                                      wse:Session.Right="ShowStart"/>
+                    </DockPanel>
+                    <!--#endregion -->
+
+                    <!--#region Bottom Icons-->
+                    <!--Programm beeden-->
+                    <mlib:WidgetImageButton Command="{Binding ExitCommand}" 
+                                      DockPanel.Dock="Bottom" 
+                                      Image="/Images/Close (32x32).png" 
+                                      Content="Schließen" 
+                                      Style="{StaticResource BottomMenuButtons}"/>
+                    
+                    <!--Abmelden-->
+                    <mlib:WidgetImageButton Command="{Binding LogoutCommand}" 
+                                      DockPanel.Dock="Bottom" 
+                                      Image="/Images/Log Out (32x32).png" 
+                                      Content="Abmelden" 
+                                      wse:Session.Visibility="Collapsed"
+                                      wse:Session.AuthMode="Authenticated"
+                                      Style="{StaticResource BottomMenuButtons}"/>
+                   
+                    <!--Einstellungen-->
+                    <mlib:WidgetImageButton Command="{Binding SettingsCommand}" 
+                                      DockPanel.Dock="Bottom" 
+                                      Image="/Images/Preferences (32x32).png" 
+                                      Content="Maschineneinstellungen" 
+                                      wse:Session.Visibility="Collapsed"
+                                      wse:Session.AuthMode="Authorized"
+                                      wse:Session.Software="MvvmTemplate"
+                                      wse:Session.Right="ShowSettings"                
+                                      Style="{StaticResource BottomMenuButtons}"/>
+                   
+                    <!--Anmelden-->
+                    <mlib:WidgetImageButton Command="{Binding LoginCommand}"
+                                      DockPanel.Dock="Bottom"
+                                      Content="Login"
+                                      Image="/Images/Log In (32x32).png" 
+                                      wse:Session.Visibility="Collapsed"
+                                      wse:Session.AuthMode="UnAuthenticated"
+                                      Style="{StaticResource BottomMenuButtons}"/>
+                    
+                    <!-- Release Notes -->
+                    <mlib:WidgetImageButton Command="{Binding ReleaseNotesCommand}"
+                                      DockPanel.Dock="Bottom"
+                                      Content="Release Notes"
+                                      Image="/Images/Information (32x32).png"
+                                      Style="{StaticResource BottomMenuButtons}"/>
+                    
+                    <!-- Release Notes -->
+                    <mlib:WidgetImageButton Command="{Binding NotesCommand}"
+                                            DockPanel.Dock="Bottom"
+                                            Content="Hilfe"
+                                            Image="/Images/Help (32x32).png"
+                                            Style="{StaticResource BottomMenuButtons}"/>
+                </DockPanel>
+                <!--Abmelden-->
+            </mlib:Widget>
+            <!--Hauptansicht-->
+            <messagesViews:Messages DockPanel.Dock="Bottom" DataContext="{Binding Messages}" Margin="0,0,5,5"/>
+            <ContentControl Content="{Binding Current}" TabIndex="0" Margin="0,5,5,5" DockPanel.Dock="Top"/>
+        </DockPanel>
+</Window>

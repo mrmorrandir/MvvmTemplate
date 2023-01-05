@@ -1,0 +1,388 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Common" />
+      <Folder Include="Models" />
+      <Folder Include="Views" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+      <PackageReference Include="MLib2" Version="1.0.5" />
+      <PackageReference Include="MLib2.MVVM" Version="1.1.0" />
+      <PackageReference Include="MLib2.MVVM.Localization" Version="1.0.3" />
+      <PackageReference Include="MLib2.MVVM.Validation.Reactive" Version="1.0.5" />
+      <PackageReference Include="MLib2.MVVM.WPF" Version="1.0.3" />
+      <PackageReference Include="MLib2.MVVM.WPF.Controls" Version="1.0.3" />
+      <PackageReference Include="MLib2.MVVM.WPF.Controls.InfoControls" Version="1.1.0" />
+      <PackageReference Include="MLib2.MVVM.WPF.Converters" Version="1.0.3" />
+      <PackageReference Include="MLib2.MVVM.WPF.Localization" Version="1.0.3" />
+      <PackageReference Include="MLib2.Reactive" Version="1.0.3" />
+      <PackageReference Include="mlib3.communication.messagebroker" Version="1.0.0" />
+      <PackageReference Include="NLog" Version="5.1.1" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.2.1" />
+      <PackageReference Include="NLog.Schema" Version="5.1.1" />
+      <PackageReference Include="WSE.Users" Version="1.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Images\Add (32x32).png" />
+      <Resource Include="Images\Add (32x32).png" />
+      <None Remove="Images\Addressbook (32x32).png" />
+      <Resource Include="Images\Addressbook (32x32).png" />
+      <None Remove="Images\Applications (32x32).png" />
+      <Resource Include="Images\Applications (32x32).png" />
+      <None Remove="Images\Backward (32x32).png" />
+      <Resource Include="Images\Backward (32x32).png" />
+      <None Remove="Images\Ball (32x32).png" />
+      <Resource Include="Images\Ball (32x32).png" />
+      <None Remove="Images\Ball (Blue) (32x32).png" />
+      <Resource Include="Images\Ball (Blue) (32x32).png" />
+      <None Remove="Images\Ball (Green) (32x32).png" />
+      <Resource Include="Images\Ball (Green) (32x32).png" />
+      <None Remove="Images\Ball (Red) (32x32).png" />
+      <Resource Include="Images\Ball (Red) (32x32).png" />
+      <None Remove="Images\Ball (Yellow) (32x32).png" />
+      <Resource Include="Images\Ball (Yellow) (32x32).png" />
+      <None Remove="Images\Book (32x32.png" />
+      <Resource Include="Images\Book (32x32.png" />
+      <None Remove="Images\Burn (32x32).png" />
+      <Resource Include="Images\Burn (32x32).png" />
+      <None Remove="Images\Calculator (32x32).png" />
+      <Resource Include="Images\Calculator (32x32).png" />
+      <None Remove="Images\Calendar (32x32.png" />
+      <Resource Include="Images\Calendar (32x32.png" />
+      <None Remove="Images\Cancel (32x32).png" />
+      <Resource Include="Images\Cancel (32x32).png" />
+      <None Remove="Images\CD (32x32).png" />
+      <Resource Include="Images\CD (32x32).png" />
+      <None Remove="Images\CD (Blue) (32x32).png" />
+      <Resource Include="Images\CD (Blue) (32x32).png" />
+      <None Remove="Images\CD (Green) (32x32).png" />
+      <Resource Include="Images\CD (Green) (32x32).png" />
+      <None Remove="Images\CD (Red) (32x32).png" />
+      <Resource Include="Images\CD (Red) (32x32).png" />
+      <None Remove="Images\CD (Yellow) (32x32).png" />
+      <Resource Include="Images\CD (Yellow) (32x32).png" />
+      <None Remove="Images\Chart (32x32).png" />
+      <Resource Include="Images\Chart (32x32).png" />
+      <None Remove="Images\Chart (Alt 2) (32x32).png" />
+      <Resource Include="Images\Chart (Alt 2) (32x32).png" />
+      <None Remove="Images\Chat Bubble (32x32).png" />
+      <Resource Include="Images\Chat Bubble (32x32).png" />
+      <None Remove="Images\Chat Bubble (Alt 2) (32x32).png" />
+      <Resource Include="Images\Chat Bubble (Alt 2) (32x32).png" />
+      <None Remove="Images\Checkmark (32x32).png" />
+      <Resource Include="Images\Checkmark (32x32).png" />
+      <None Remove="Images\Clipboard (32x32).png" />
+      <Resource Include="Images\Clipboard (32x32).png" />
+      <None Remove="Images\Close (32x32).png" />
+      <Resource Include="Images\Close (32x32).png" />
+      <None Remove="Images\Connect (32x32).png" />
+      <Resource Include="Images\Connect (32x32).png" />
+      <None Remove="Images\Copy (32x32).png" />
+      <Resource Include="Images\Copy (32x32).png" />
+      <None Remove="Images\Cut (32x32).png" />
+      <Resource Include="Images\Cut (32x32).png" />
+      <None Remove="Images\Database (32x32).png" />
+      <Resource Include="Images\Database (32x32).png" />
+      <None Remove="Images\Delete (32x32).png" />
+      <Resource Include="Images\Delete (32x32).png" />
+      <None Remove="Images\Desktop (32x32).png" />
+      <Resource Include="Images\Desktop (32x32).png" />
+      <None Remove="Images\Desktop (Alt 2) (32x32).png" />
+      <Resource Include="Images\Desktop (Alt 2) (32x32).png" />
+      <None Remove="Images\Document (32x32).png" />
+      <Resource Include="Images\Document (32x32).png" />
+      <None Remove="Images\Document (Add) (32x32).png" />
+      <Resource Include="Images\Document (Add) (32x32).png" />
+      <None Remove="Images\Document (Remove) (32x32).png" />
+      <Resource Include="Images\Document (Remove) (32x32).png" />
+      <None Remove="Images\Documents (32x32).png" />
+      <Resource Include="Images\Documents (32x32).png" />
+      <None Remove="Images\Dollar (32x32).png" />
+      <Resource Include="Images\Dollar (32x32).png" />
+      <None Remove="Images\Down (32x32).png" />
+      <Resource Include="Images\Down (32x32).png" />
+      <None Remove="Images\Edit (32x32).png" />
+      <Resource Include="Images\Edit (32x32).png" />
+      <None Remove="Images\Edit (Alt 2) (32x32).png" />
+      <Resource Include="Images\Edit (Alt 2) (32x32).png" />
+      <None Remove="Images\Euro (32x32).png" />
+      <Resource Include="Images\Euro (32x32).png" />
+      <None Remove="Images\Event (32x32).png" />
+      <Resource Include="Images\Event (32x32).png" />
+      <None Remove="Images\Event (Blue) (32x32).png" />
+      <Resource Include="Images\Event (Blue) (32x32).png" />
+      <None Remove="Images\Event (Green) (32x32) copy.png" />
+      <Resource Include="Images\Event (Green) (32x32) copy.png" />
+      <None Remove="Images\Event (Red) (32x32).png" />
+      <Resource Include="Images\Event (Red) (32x32).png" />
+      <None Remove="Images\Event (Yellow) (32x32).png" />
+      <Resource Include="Images\Event (Yellow) (32x32).png" />
+      <None Remove="Images\Export (32x32).png" />
+      <Resource Include="Images\Export (32x32).png" />
+      <None Remove="Images\Favorites (32x32).png" />
+      <Resource Include="Images\Favorites (32x32).png" />
+      <None Remove="Images\Favorites (Add) (32x32).png" />
+      <Resource Include="Images\Favorites (Add) (32x32).png" />
+      <None Remove="Images\Favorites (Remove) (32x32).png" />
+      <Resource Include="Images\Favorites (Remove) (32x32).png" />
+      <None Remove="Images\First Aid (32x32).png" />
+      <Resource Include="Images\First Aid (32x32).png" />
+      <None Remove="Images\Folder (32x32).png" />
+      <Resource Include="Images\Folder (32x32).png" />
+      <None Remove="Images\Folder (Add) (32x32).png" />
+      <Resource Include="Images\Folder (Add) (32x32).png" />
+      <None Remove="Images\Folder (Alt 2) (32x32).png" />
+      <Resource Include="Images\Folder (Alt 2) (32x32).png" />
+      <None Remove="Images\Folder (Favorites) (32x32).png" />
+      <Resource Include="Images\Folder (Favorites) (32x32).png" />
+      <None Remove="Images\Folder (Open) (32x32).png" />
+      <Resource Include="Images\Folder (Open) (32x32).png" />
+      <None Remove="Images\Folder (Remove) (32x32).png" />
+      <Resource Include="Images\Folder (Remove) (32x32).png" />
+      <None Remove="Images\Font (32x32).png" />
+      <Resource Include="Images\Font (32x32).png" />
+      <None Remove="Images\Forward (32x32).png" />
+      <Resource Include="Images\Forward (32x32).png" />
+      <None Remove="Images\Gear (32x32).png" />
+      <Resource Include="Images\Gear (32x32).png" />
+      <None Remove="Images\Gear (Alt 2) (32x32).png" />
+      <Resource Include="Images\Gear (Alt 2) (32x32).png" />
+      <None Remove="Images\Globe (32x32).png" />
+      <Resource Include="Images\Globe (32x32).png" />
+      <None Remove="Images\Globe (Alt 2) (32x32).png" />
+      <Resource Include="Images\Globe (Alt 2) (32x32).png" />
+      <None Remove="Images\Harddisk (32x32).png" />
+      <Resource Include="Images\Harddisk (32x32).png" />
+      <None Remove="Images\Harddisk (Download) (32x32).png" />
+      <Resource Include="Images\Harddisk (Download) (32x32).png" />
+      <None Remove="Images\Harddisk (Upload) (32x32).png" />
+      <Resource Include="Images\Harddisk (Upload) (32x32).png" />
+      <None Remove="Images\Help (32x32).png" />
+      <Resource Include="Images\Help (32x32).png" />
+      <None Remove="Images\Help (Alt 2) (32x32).png" />
+      <Resource Include="Images\Help (Alt 2) (32x32).png" />
+      <None Remove="Images\Help (Alt 3) (32x32).png" />
+      <Resource Include="Images\Help (Alt 3) (32x32).png" />
+      <None Remove="Images\History (32x32).png" />
+      <Resource Include="Images\History (32x32).png" />
+      <None Remove="Images\Home (32x32).png" />
+      <Resource Include="Images\Home (32x32).png" />
+      <None Remove="Images\Home (Alt 2) (32x32).png" />
+      <Resource Include="Images\Home (Alt 2) (32x32).png" />
+      <None Remove="Images\Icon-PickByLightCommi.ico" />
+      <Resource Include="Images\Icon-PickByLightCommi.ico" />
+      <None Remove="Images\Icon PickByLightCommi.png" />
+      <Resource Include="Images\Icon PickByLightCommi.png" />
+      <None Remove="Images\Image (32x32).png" />
+      <Resource Include="Images\Image (32x32).png" />
+      <None Remove="Images\Images (32x32).png" />
+      <Resource Include="Images\Images (32x32).png" />
+      <None Remove="Images\Import (32x32).png" />
+      <Resource Include="Images\Import (32x32).png" />
+      <None Remove="Images\Increase (32x32).png" />
+      <Resource Include="Images\Increase (32x32).png" />
+      <None Remove="Images\Information (32x32).png" />
+      <Resource Include="Images\Information (32x32).png" />
+      <None Remove="Images\Junk (Empty) (32x32).png" />
+      <Resource Include="Images\Junk (Empty) (32x32).png" />
+      <None Remove="Images\Junk (Full) (32x32).png" />
+      <Resource Include="Images\Junk (Full) (32x32).png" />
+      <None Remove="Images\Left (32x32).png" />
+      <Resource Include="Images\Left (32x32).png" />
+      <None Remove="Images\Left Down (32x32).png" />
+      <Resource Include="Images\Left Down (32x32).png" />
+      <None Remove="Images\Left Up (32x32).png" />
+      <Resource Include="Images\Left Up (32x32).png" />
+      <None Remove="Images\Light Bulb (Off) (32x32).png" />
+      <Resource Include="Images\Light Bulb (Off) (32x32).png" />
+      <None Remove="Images\Light Bulb (On) (32x32).png" />
+      <Resource Include="Images\Light Bulb (On) (32x32).png" />
+      <None Remove="Images\Light Bulb (On) (Alt) (32x32).png" />
+      <Resource Include="Images\Light Bulb (On) (Alt) (32x32).png" />
+      <None Remove="Images\Lock (32x32).png" />
+      <Resource Include="Images\Lock (32x32).png" />
+      <None Remove="Images\Log In (32x32).png" />
+      <Resource Include="Images\Log In (32x32).png" />
+      <None Remove="Images\Log Out (32x32).png" />
+      <Resource Include="Images\Log Out (32x32).png" />
+      <None Remove="Images\Mail (32x32).png" />
+      <Resource Include="Images\Mail (32x32).png" />
+      <None Remove="Images\Mail (Alt 2) (32x32).png" />
+      <Resource Include="Images\Mail (Alt 2) (32x32).png" />
+      <None Remove="Images\Move (32x32).png" />
+      <Resource Include="Images\Move (32x32).png" />
+      <None Remove="Images\Music (32x32).png" />
+      <Resource Include="Images\Music (32x32).png" />
+      <None Remove="Images\Music (Alt 2) (32x32).png" />
+      <Resource Include="Images\Music (Alt 2) (32x32).png" />
+      <None Remove="Images\Network (32x32).png" />
+      <Resource Include="Images\Network (32x32).png" />
+      <None Remove="Images\News (32x32).png" />
+      <Resource Include="Images\News (32x32).png" />
+      <None Remove="Images\Next (32x32).png" />
+      <Resource Include="Images\Next (32x32).png" />
+      <None Remove="Images\Notepad (32x32).png" />
+      <Resource Include="Images\Notepad (32x32).png" />
+      <None Remove="Images\OK (32x32).png" />
+      <Resource Include="Images\OK (32x32).png" />
+      <None Remove="Images\Options (32x32).png" />
+      <Resource Include="Images\Options (32x32).png" />
+      <None Remove="Images\Paint (32x32).png" />
+      <Resource Include="Images\Paint (32x32).png" />
+      <None Remove="Images\Paper Clip (32x32).png" />
+      <Resource Include="Images\Paper Clip (32x32).png" />
+      <None Remove="Images\Paste (32x32).png" />
+      <Resource Include="Images\Paste (32x32).png" />
+      <None Remove="Images\Pause (32x32).png" />
+      <Resource Include="Images\Pause (32x32).png" />
+      <None Remove="Images\Pencil (32x32).png" />
+      <Resource Include="Images\Pencil (32x32).png" />
+      <None Remove="Images\Pencil (Alt 2) (32x32).png" />
+      <Resource Include="Images\Pencil (Alt 2) (32x32).png" />
+      <None Remove="Images\Play (32x32).png" />
+      <Resource Include="Images\Play (32x32).png" />
+      <None Remove="Images\Play Back (32x32).png" />
+      <Resource Include="Images\Play Back (32x32).png" />
+      <None Remove="Images\Preferences (32x32).png" />
+      <Resource Include="Images\Preferences (32x32).png" />
+      <None Remove="Images\Preferences (Alt 2) (32x32).png" />
+      <Resource Include="Images\Preferences (Alt 2) (32x32).png" />
+      <None Remove="Images\Preview (32x32).png" />
+      <Resource Include="Images\Preview (32x32).png" />
+      <None Remove="Images\Previous (32x32).png" />
+      <Resource Include="Images\Previous (32x32).png" />
+      <None Remove="Images\Print (32x32).png" />
+      <Resource Include="Images\Print (32x32).png" />
+      <None Remove="Images\Private (32x32).png" />
+      <Resource Include="Images\Private (32x32).png" />
+      <None Remove="Images\Protection (32x32).png" />
+      <Resource Include="Images\Protection (32x32).png" />
+      <None Remove="Images\Recycle (32x32).png" />
+      <Resource Include="Images\Recycle (32x32).png" />
+      <None Remove="Images\Redo (32x32).png" />
+      <Resource Include="Images\Redo (32x32).png" />
+      <None Remove="Images\Refresh (32x32).png" />
+      <Resource Include="Images\Refresh (32x32).png" />
+      <None Remove="Images\Remove (32x32).png" />
+      <Resource Include="Images\Remove (32x32).png" />
+      <None Remove="Images\Revision (32x32).png" />
+      <Resource Include="Images\Revision (32x32).png" />
+      <None Remove="Images\Right (32x32).png" />
+      <Resource Include="Images\Right (32x32).png" />
+      <None Remove="Images\Right Down (32x32).png" />
+      <Resource Include="Images\Right Down (32x32).png" />
+      <None Remove="Images\Right Up (32x32).png" />
+      <Resource Include="Images\Right Up (32x32).png" />
+      <None Remove="Images\Rotate Left (32x32).png" />
+      <Resource Include="Images\Rotate Left (32x32).png" />
+      <None Remove="Images\Rotate Right (32x32).png" />
+      <Resource Include="Images\Rotate Right (32x32).png" />
+      <None Remove="Images\Ruler (32x32).png" />
+      <Resource Include="Images\Ruler (32x32).png" />
+      <None Remove="Images\Save (32x32).png" />
+      <Resource Include="Images\Save (32x32).png" />
+      <None Remove="Images\Save As (32x32).png" />
+      <Resource Include="Images\Save As (32x32).png" />
+      <None Remove="Images\Seal (32x32) .png" />
+      <Resource Include="Images\Seal (32x32) .png" />
+      <None Remove="Images\Search (32x32).png" />
+      <Resource Include="Images\Search (32x32).png" />
+      <None Remove="Images\Send Mail (32x32).png" />
+      <Resource Include="Images\Send Mail (32x32).png" />
+      <None Remove="Images\Shopping Cart (32x32).png" />
+      <Resource Include="Images\Shopping Cart (32x32).png" />
+      <None Remove="Images\Shopping Cart (Alt 2) (32x32).png" />
+      <Resource Include="Images\Shopping Cart (Alt 2) (32x32).png" />
+      <None Remove="Images\Smiley (32x32).png" />
+      <Resource Include="Images\Smiley (32x32).png" />
+      <None Remove="Images\splash_PickByLightCommi.png" />
+      <Resource Include="Images\splash_PickByLightCommi.png" />
+      <None Remove="Images\Stamp (32x32).png" />
+      <Resource Include="Images\Stamp (32x32).png" />
+      <None Remove="Images\Star (32x32).png" />
+      <Resource Include="Images\Star (32x32).png" />
+      <None Remove="Images\Star (Alt 2) (32x32).png" />
+      <Resource Include="Images\Star (Alt 2) (32x32).png" />
+      <None Remove="Images\Stop (32x32).png" />
+      <Resource Include="Images\Stop (32x32).png" />
+      <None Remove="Images\Stop (Alt 2) (32x32).png" />
+      <Resource Include="Images\Stop (Alt 2) (32x32).png" />
+      <None Remove="Images\Synth (32x32).png" />
+      <Resource Include="Images\Synth (32x32).png" />
+      <None Remove="Images\Telephone (32x32).png" />
+      <Resource Include="Images\Telephone (32x32).png" />
+      <None Remove="Images\Terminal (32x32).png" />
+      <Resource Include="Images\Terminal (32x32).png" />
+      <None Remove="Images\Text (32x32).png" />
+      <Resource Include="Images\Text (32x32).png" />
+      <None Remove="Images\Tool (32x32).png" />
+      <Resource Include="Images\Tool (32x32).png" />
+      <None Remove="Images\Toolbox (32x32).png" />
+      <Resource Include="Images\Toolbox (32x32).png" />
+      <None Remove="Images\Traffic Light (32x32).png" />
+      <Resource Include="Images\Traffic Light (32x32).png" />
+      <None Remove="Images\Trash (Empty) (32x32).png" />
+      <Resource Include="Images\Trash (Empty) (32x32).png" />
+      <None Remove="Images\Trash (Full) (32x32).png" />
+      <Resource Include="Images\Trash (Full) (32x32).png" />
+      <None Remove="Images\TV (32x32).png" />
+      <Resource Include="Images\TV (32x32).png" />
+      <None Remove="Images\Undo (32x32).png" />
+      <Resource Include="Images\Undo (32x32).png" />
+      <None Remove="Images\Unlocked (32x32).png" />
+      <Resource Include="Images\Unlocked (32x32).png" />
+      <None Remove="Images\Up (32x32).png" />
+      <Resource Include="Images\Up (32x32).png" />
+      <None Remove="Images\User (32x32).png" />
+      <Resource Include="Images\User (32x32).png" />
+      <None Remove="Images\User (Alt 2) (32x32).png" />
+      <Resource Include="Images\User (Alt 2) (32x32).png" />
+      <None Remove="Images\Users (32x32).png" />
+      <Resource Include="Images\Users (32x32).png" />
+      <None Remove="Images\vCard (32x32).png" />
+      <Resource Include="Images\vCard (32x32).png" />
+      <None Remove="Images\View (32x32).png" />
+      <Resource Include="Images\View (32x32).png" />
+      <None Remove="Images\Warning (32x32).png" />
+      <Resource Include="Images\Warning (32x32).png" />
+      <None Remove="Images\Warning (Alt 2) (32x32).png" />
+      <Resource Include="Images\Warning (Alt 2) (32x32).png" />
+      <None Remove="Images\Website (32x32).png" />
+      <Resource Include="Images\Website (32x32).png" />
+      <None Remove="Images\Wev Server (32x32).png" />
+      <Resource Include="Images\Wev Server (32x32).png" />
+      <None Remove="Images\Window (32x32).png" />
+      <Resource Include="Images\Window (32x32).png" />
+      <None Remove="Images\Write (32x32).png" />
+      <Resource Include="Images\Write (32x32).png" />
+      <None Remove="Images\Zoom In (32x32).png" />
+      <Resource Include="Images\Zoom In (32x32).png" />
+      <None Remove="Images\Zoom Out (32x32).png" />
+      <Resource Include="Images\Zoom Out (32x32).png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="ReleaseNotes.md" />
+      <Content Include="ReleaseNotes.md">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Help.md" />
+      <Content Include="Help.md">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>

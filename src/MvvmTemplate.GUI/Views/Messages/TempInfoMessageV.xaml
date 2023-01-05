@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:messagesViewModels="clr-namespace:MLib3.Communication.MessageBroker.Messages;assembly=MLib3.Communication.MessageBroker">
+    
+    <DataTemplate DataType="{x:Type messagesViewModels:TempInfoMessage}">
+        <Border CornerRadius="3" Padding="5" Margin="0,0,0,3" Background="Blue" BorderThickness="1" BorderBrush="Navy">
+                <TextBlock Foreground="White">
+                    <Run Text="{Binding Timestamp, Mode=OneWay, StringFormat={}yyyy.MM.dd HH\:mm\:ss}"/>
+                    <Run Text="{Binding Text, Mode=OneWay}"/>
+                </TextBlock>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

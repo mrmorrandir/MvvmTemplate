@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mlib="http://mlib.com/mvvm"
+                    xmlns:infos="clr-namespace:MvvmTemplate.GUI.ViewModels.Infos">
+
+    <DataTemplate DataType="{x:Type infos:NotesVM}">
+        <mlib:Widget Header="Notes">
+            <mlib:InfoNotes NotesFile="{Binding NotesFile}"/>
+        </mlib:Widget>
+    </DataTemplate>
+    
+</ResourceDictionary>
